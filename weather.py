@@ -41,9 +41,12 @@ def convert_f_to_c(temp_in_fahrenheit):
     """
     #pass
 
-    temp_in_c = (temp_in_fahrenheit - 32) * 5 / 9
-    return round(float(temp_in_c),1)
+    temp_in_c = (float(temp_in_fahrenheit) - 32) * 5 / 9
+    result = round(temp_in_c, 1)
+    return int(result) if result.is_integer() else result
 
+    # temp_in_c = (temp_in_fahrenheit - 32) * 5 / 9
+    # return round(float(temp_in_c),1)
 
 def calculate_mean(weather_data):
     """Calculates the mean value from a list of numbers.
