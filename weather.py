@@ -41,12 +41,15 @@ def convert_f_to_c(temp_in_fahrenheit):
     """
     #pass
 
-    temp_in_c = (float(temp_in_fahrenheit) - 32) * 5 / 9
-    result = round(temp_in_c, 1)
-    return int(result) if result.is_integer() else result
+    # result = round((float(temp_in_fahrenheit) - 32) * 5 / 9, 1)
+    # return int(result) if result.is_integer() else result 
 
-    # temp_in_c = (temp_in_fahrenheit - 32) * 5 / 9
-    # return round(float(temp_in_c),1)
+    # temp_in_c = (float(temp_in_fahrenheit) - 32) * 5 / 9
+    # result = round(temp_in_c, 1)
+    # return int(result) if result.is_integer() else result
+
+    temp_in_c = (temp_in_fahrenheit - 32) * 5 / 9
+    return round(float(temp_in_c),1)
 
 def calculate_mean(weather_data):
     """Calculates the mean value from a list of numbers.
@@ -153,7 +156,14 @@ def generate_summary(weather_data):
     )
 
     return summary
-
+# example_one = [
+#     ["2021-07-02T07:00:00+08:00", 49, 67],
+#     ["2021-07-03T07:00:00+08:00", 57, 68],
+#     ["2021-07-04T07:00:00+08:00", 56, 62],
+#     ["2021-07-05T07:00:00+08:00", 55, 61],
+#     ["2021-07-06T07:00:00+08:00", 53, 62]
+# ]
+# print (generate_summary(example_one))
 
 
 def generate_daily_summary(weather_data):
