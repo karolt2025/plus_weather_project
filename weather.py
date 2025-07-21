@@ -171,7 +171,6 @@ def generate_daily_summary(weather_data):
             f"---- {date} ----\n"
             f"  Minimum Temperature: {min_temp}\n"
             f"  Maximum Temperature: {max_temp}\n"
-            f" \n"
         )
 
     return "\n".join(summary_lines) + "\n"
