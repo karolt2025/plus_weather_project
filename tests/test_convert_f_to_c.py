@@ -27,7 +27,7 @@ class ConvertTempTests(unittest.TestCase):
         self.assertEqual(result, expected_result)
 
     def test_convert_f_to_c_string(self):
-        temp_in_f = 77
+        temp_in_f = "77"
         expected_result = 25.0
         result = weather.convert_f_to_c(temp_in_f)
         self.assertEqual(result, expected_result)

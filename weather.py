@@ -131,8 +131,7 @@ def generate_summary(weather_data):
     min_temp, min_index = find_min(lows)
     min_day = convert_date(weather_data[min_index][0])
 
-    min_temp = min(lows)
-    min_index = lows.index(min_temp)
+    min_temp, min_index = find_min(lows)
     min_day = convert_date(weather_data[min_index][0])
 
     max_temp = max(highs)
@@ -166,16 +165,25 @@ def generate_daily_summary(weather_data):
     summary_lines = []
     for day in weather_data:
         date = convert_date(day[0])
-        high = format_temperature(convert_f_to_c(float(day[2])))
-        low = format_temperature(convert_f_to_c(float(day[1])))
+        min_temp = format_temperature(convert_f_to_c(float(day[1])))
+        max_temp = format_temperature(convert_f_to_c(float(day[2])))
         summary_lines.append(
             f"---- {date} ----\n"
-            f"  Maximum Temperature: {high}\n"
-            f"  Minimum Temperature: {low}\n"
+            f"  Minimum Temperature: {min_temp}\n"
+            f"  Maximum Temperature: {max_temp}\n"
+            f" \n"
         )
 
-    return "\n".join(summary_lines)
+    return "\n".join(summary_lines) + "\n"
+
+# example_one = [
+#     ["2021-07-02T07:00:00+08:00", 49, 67],
+#     ["2021-07-03T07:00:00+08:00", 57, 68],
+#     ["2021-07-04T07:00:00+08:00", 56, 62],
+#     ["2021-07-05T07:00:00+08:00", 55, 61],
+#     ["2021-07-06T07:00:00+08:00", 53, 62]
+# ]
+# print (generate_daily_summary(example_one))
 
 
 
-print(generate_daily_summary(example_one))
