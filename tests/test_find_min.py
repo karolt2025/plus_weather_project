@@ -27,7 +27,7 @@ class FindMinTests(unittest.TestCase):
         self.assertEqual(result, expected_result)
 
     def test_find_min_strings(self):
-        temperatures = ["49", "57", "56", "55", "53", "49"]
+        temperatures = ["49","57", "56", "55", "53", "49"]
         expected_result = (49.0, 5)
         result = weather.find_min(temperatures)
         self.assertEqual(result, expected_result)
